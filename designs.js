@@ -2,13 +2,13 @@ function makeGrid(height, width) {
   var table = document.getElementById("pixelCanvas");
   var grid = '';
 
-// loop for rows
-  for (i = 0; i < height; i++){
+//loop for rows
+  for (x = 0; x < height; x++){
     grid += '<tr>';
 
-// loop for columns
-   for (j = 0; j < width; j++){
-     grid += '<td class="cell" id="row-' + i + '_cell-' + j + '"></td>';
+//loop for columns
+   for (y = 0; y < width; y++){
+     grid += '<td class="cell" id="row-' + x + '_cell-' + y + '"></td>';
     }
     grid += '</tr>';
   }
@@ -34,8 +34,8 @@ colorPicker.addEventListener("input", function() {
 //click events to box
   function addClickEventToCells() {
     var box = document.getElementsByClassName('cell');
-    for (i = 0; i < box.length; i++) {
-      box[i].addEventListener("click",  function(event) {
+    for (x = 0; x < box.length; x++) {
+      box[x].addEventListener("click",  function(event) {
         var selectedBox = event.target;
         selectedBox.style.backgroundColor = selectedColor;
     });
